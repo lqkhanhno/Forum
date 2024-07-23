@@ -1,0 +1,190 @@
+﻿@page
+@model QnaForum_App.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            .login-container h2 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        #login-message {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .image-container {
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+            .image-container img {
+                width: 400%;
+                height: auto;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .register-link a {
+                color: #007bff;
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+                .register-link a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h2>Login</h2>
+
+            <div id="login-message"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <div class="register-link">
+                <p>Chưa có tài khoản? <a href="/Register">Đăng ký ngay</a></p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="~/image/download.jfif" />
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            const password = urlParams.get('password');
+            if (username) {
+                document.getElementById('username').value = username;
+            }
+            if (password) {
+                document.getElementById('password').value = password;
+            }
+            const newUrl = window.location.origin + window.location.pathname;
+            window.history.pushState({}, document.title, newUrl);
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('http://localhost:5100/api/User/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const messageDiv = document.getElementById('login-message');
+                    if (data && data.username) {
+                        localStorage.setItem('isLoggedIn', 'true');
+                        localStorage.setItem('username', data.username);
+                        window.location.href = '/HomePage?login=true';
+                    } else {
+                        messageDiv.innerText = 'Login failed. Please try again.';
+                        messageDiv.style.color = 'red';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during login:', error);
+                    const messageDiv = document.getElementById('login-message');
+                    messageDiv.innerText = 'An error occurred. Please try again.';
+                    messageDiv.style.color = 'red';
+                });
+        });
+    </script>
+</body>
+</html>

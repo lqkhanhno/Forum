@@ -1,0 +1,436 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\userinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\userinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\questiondetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\questiondetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TSServer\\lib.dom.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\createquestion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\createquestion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\controllers\\answercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\controllers\\answercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\models\\qnaforumcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\models\\qnaforumcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\pages\\questiondetail.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\pages\\questiondetail.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_app\\qnaforum_app.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}",
+      "RelativeMoniker": "D:0:0:{F190532F-9F57-4153-99CD-ECD5A31C0FA8}|QnaForum_App\\QnaForum_App.csproj|solutionrelative:qnaforum_app\\qnaforum_app.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\qnaforum_api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\qnaforum_api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|c:\\users\\lqkha\\desktop\\prn231_project\\qnaforum_api\\qnaforum_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7634E7E3-43A5-43F1-B158-808AF262FD15}|QnAForum_API\\QnAForum_API.csproj|solutionrelative:qnaforum_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Register.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\Register.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Register.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\Register.cshtml",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAAACsAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-17T14:23:15.773Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "QnAForum_API\\Models\\Question.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Models\\Question.cs",
+              "RelativeToolTip": "QnAForum_API\\Models\\Question.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T15:25:31.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserInfo.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\UserInfo.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\UserInfo.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\UserInfo.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\UserInfo.cshtml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAEIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-19T19:24:05.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QuestionDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\QuestionDetail.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\QuestionDetail.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\QuestionDetail.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\QuestionDetail.cshtml",
+              "ViewState": "AQIAAPwAAAAAAAAAAAAswBUBAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-22T01:26:01.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Login.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\Login.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Login.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\Login.cshtml",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAH4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-19T08:37:47.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QuestionController.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Controllers\\QuestionController.cs",
+              "RelativeDocumentMoniker": "QnAForum_API\\Controllers\\QuestionController.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Controllers\\QuestionController.cs",
+              "RelativeToolTip": "QnAForum_API\\Controllers\\QuestionController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T12:20:55.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Index.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\Index.cshtml",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAAAIUAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T16:12:03.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Models\\User.cs",
+              "RelativeDocumentMoniker": "QnAForum_API\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Models\\User.cs",
+              "RelativeToolTip": "QnAForum_API\\Models\\User.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T03:07:50.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "QnAForum_API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "QnAForum_API\\Controllers\\UserController.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAcwDUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T09:57:01.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateQuestion.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\CreateQuestion.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\CreateQuestion.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\CreateQuestion.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\CreateQuestion.cshtml",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAQwJEAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-19T07:58:42.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "lib.dom.d.ts",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TSServer\\lib.dom.d.ts",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TSServer\\lib.dom.d.ts",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TSServer\\lib.dom.d.ts",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TSServer\\lib.dom.d.ts",
+              "ViewState": "AQIAAJI4AAAAAAAAAAAcwKg4AAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-07-22T01:23:58.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AnswerController.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Controllers\\AnswerController.cs",
+              "RelativeDocumentMoniker": "QnAForum_API\\Controllers\\AnswerController.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Controllers\\AnswerController.cs",
+              "RelativeToolTip": "QnAForum_API\\Controllers\\AnswerController.cs",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAowLYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T03:14:32.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Error.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\Error.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Error.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\Error.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T16:21:19.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T16:11:29.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "QnaForum_App\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T16:11:40.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Program.cs",
+              "RelativeDocumentMoniker": "QnAForum_API\\Program.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Program.cs",
+              "RelativeToolTip": "QnAForum_API\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAswBgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T16:47:54.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "QnAForumContext.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Models\\QnAForumContext.cs",
+              "RelativeDocumentMoniker": "QnAForum_API\\Models\\QnAForumContext.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Models\\QnAForumContext.cs",
+              "RelativeToolTip": "QnAForum_API\\Models\\QnAForumContext.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAswGMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T08:20:57.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "QnaForum_App\\Pages\\Index.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T16:11:37.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\appsettings.json",
+              "RelativeDocumentMoniker": "QnAForum_API\\appsettings.json",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\appsettings.json",
+              "RelativeToolTip": "QnAForum_API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-16T03:38:35.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\Login.cshtml.cs",
+              "RelativeToolTip": "QnaForum_App\\Pages\\Login.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T03:12:33.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "QuestionDetail.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\QuestionDetail.cshtml.cs",
+              "RelativeDocumentMoniker": "QnaForum_App\\Pages\\QuestionDetail.cshtml.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Pages\\QuestionDetail.cshtml.cs",
+              "RelativeToolTip": "QnaForum_App\\Pages\\QuestionDetail.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T17:42:40.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Program.cs",
+              "RelativeDocumentMoniker": "QnaForum_App\\Program.cs",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Program.cs",
+              "RelativeToolTip": "QnaForum_App\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T16:45:43.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "QnaForum_App\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\Properties\\launchSettings.json",
+              "RelativeToolTip": "QnaForum_App\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-16T16:12:35.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "QnaForum_App",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\QnaForum_App.csproj",
+              "RelativeDocumentMoniker": "QnaForum_App\\QnaForum_App.csproj",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnaForum_App\\QnaForum_App.csproj",
+              "RelativeToolTip": "QnaForum_App\\QnaForum_App.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-17T03:07:12.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "QnAForum_API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "QnAForum_API\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-16T03:38:47.261Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "QnAForum_API",
+              "DocumentMoniker": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\QnAForum_API.csproj",
+              "RelativeDocumentMoniker": "QnAForum_API\\QnAForum_API.csproj",
+              "ToolTip": "C:\\Users\\lqkha\\Desktop\\PRN231_Project\\QnAForum_API\\QnAForum_API\\QnAForum_API.csproj",
+              "RelativeToolTip": "QnAForum_API\\QnAForum_API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-16T09:55:58.35Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

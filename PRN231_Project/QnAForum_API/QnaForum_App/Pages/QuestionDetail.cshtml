@@ -1,0 +1,401 @@
+﻿@page "/QuestionDetail"
+@model QuestionDetailModel
+@{
+    ViewData["Title"] = "Chi Tiết Câu Hỏi";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chi Tiết Câu Hỏi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: right;
+        }
+
+            nav a {
+                color: #333;
+                text-decoration: none;
+                margin-right: 20px;
+                font-size: 16px;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .question, .answer {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .question {
+            border-color: #007bff;
+        }
+
+            .question h3 {
+                margin-top: 0;
+                color: #007bff;
+                border-bottom: 2px solid #007bff;
+                padding-bottom: 5px;
+            }
+
+        .answer {
+            border-color: #28a745;
+        }
+
+            .answer h3 {
+                margin-top: 0;
+                color: #28a745;
+                border-bottom: 2px solid #28a745;
+                padding-bottom: 5px;
+            }
+
+        .username {
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .answer-form {
+            margin-top: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: red;
+        }
+
+        .timestamp {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Add these styles to your existing style block */
+        .menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #007bff;
+            font-size: 18px;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            width: 120px;
+        }
+
+            .menu-content button {
+                background: none;
+                border: none;
+                padding: 10px;
+                width: 200%;
+                text-align: left;
+                cursor: pointer;
+                color: #007bff; /* Text color of the button */
+                font-size: 16px; /* Font size of the button */
+            }
+
+                .menu-content button:hover {
+                    background-color: #f2f2f2; /* Background color on hover */
+                    color: #0056b3; /* Text color on hover */
+                }
+
+        .answer {
+            position: relative; /* To position menu inside answer */
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Chi Tiết Câu Hỏi</h1>
+    </header>
+    <nav>
+        <span class="username" id="username" style="display: none;"></span>
+        <a href="/HomePage">Trang Chủ</a>
+        <a href="/Login" id="login-link">Đăng Nhập</a>
+        <a href="/Register" id="register-link">Đăng Ký</a>
+        <a href="#" id="logout-link" style="display: none;">Đăng Xuất</a>
+    </nav>
+
+    <main>
+        <div id="question-detail">
+            <!-- Question details will be dynamically loaded here -->
+        </div>
+        <div id="answers-list">
+            <!-- Answers will be dynamically loaded here -->
+        </div>
+        <div class="answer-form" id="answer-form" style="display: none;">
+            <h3>Trả Lời Câu Hỏi</h3>
+            <textarea id="answer-body" rows="4" placeholder="Nhập câu trả lời của bạn"></textarea>
+            <button id="post-answer">Đăng Câu Trả Lời</button>
+        </div>
+        <div id="message" class="message"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const questionId = params.get('id');
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const username = localStorage.getItem('username');
+
+            if (!questionId) {
+                console.error('ID câu hỏi không có trong URL');
+                return;
+            }
+
+            const loginLink = document.getElementById('login-link');
+            const registerLink = document.getElementById('register-link');
+            const logoutLink = document.getElementById('logout-link');
+            const usernameSpan = document.getElementById('username');
+            const answerForm = document.getElementById('answer-form');
+            const answersList = document.getElementById('answers-list');
+            const questionDetail = document.getElementById('question-detail');
+            const messageDiv = document.getElementById('message');
+
+            if (isLoggedIn) {
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+                logoutLink.style.display = 'inline';
+                usernameSpan.style.display = 'inline';
+                usernameSpan.innerText = username;
+                answerForm.style.display = 'block';
+            } else {
+                loginLink.style.display = 'inline';
+                registerLink.style.display = 'inline';
+                logoutLink.style.display = 'none';
+                usernameSpan.style.display = 'none';
+                answerForm.style.display = 'none';
+            }
+
+            // Logout event
+            logoutLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                localStorage.setItem('isLoggedIn', 'false');
+                localStorage.removeItem('username');
+                window.location.href = '/HomePage';
+            });
+
+            // Fetch question details via API
+            fetch(`http://localhost:5100/api/Question/${questionId}`)
+                .then(response => response.json())
+                .then(data => {
+                    questionDetail.innerHTML = `<div class="question">
+                                                                        <h3>${data.title}</h3>
+                                                                        <p>${data.body}</p>
+                                                                        <p><strong>Người hỏi:</strong> ${data.user.username}</p>
+                                                                        <div class="timestamp">Ngày tạo: ${new Date(data.createdAt).toLocaleString()}</div>
+                                                                        <div class="menu">...</div>
+                                                                        <div class="menu-content">
+                                                                            <button class="info-button" data-id="${data.user.userId}" style="display: none;">Xem thông tin</button>
+                                                                            <button class="delete-button" data-id="${data.questionId}" style="display: none;">Xóa</button>
+                                                                        </div>
+                                                                    </div>`;
+                    // Check if the current user is the owner of the question
+                    const deleteButton = document.querySelector('.question .delete-button');
+                    const infoButton = document.querySelector('.question .info-button');
+                    if (isLoggedIn && username === data.user.username) {
+                        deleteButton.style.display = 'inline'; // Show delete button if user is the owner
+                    }
+                    else infoButton.style.display = 'inline';
+
+                    const menu = document.querySelector('.question .menu');
+                    const menuContent = document.querySelector('.question .menu-content');
+                    menu.addEventListener('click', function () {
+                        menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+                    });
+                    infoButton.addEventListener('click', function () {
+                        const userId = this.getAttribute('data-id');
+                        window.location.href = `/UserInfo?id=${data.user.userId}`;
+                    });
+                    // Delete button functionality
+                    deleteButton.addEventListener('click', function () {
+                        if (confirm('Bạn có chắc chắn muốn xóa câu hỏi này?')) {
+                            fetch(`http://localhost:5100/api/Question/${data.questionId}`, {
+                                method: 'DELETE'
+                            })
+                                .then(response => {
+                                    if (response.ok) {
+                                        window.location.href = '/HomePage';
+                                    } else {
+                                        throw new Error('Lỗi khi xóa câu hỏi');
+                                    }
+                                })
+                                .catch(error => console.error('Lỗi khi xóa câu hỏi:', error));
+                        }
+                    });
+                })
+                .catch(error => console.error('Lỗi khi lấy chi tiết câu hỏi:', error));
+
+            // Fetch answers for the question
+            fetch(`http://localhost:5100/api/Answer/question/${questionId}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(answer => {
+                        const answerDiv = document.createElement('div');
+                        answerDiv.classList.add('answer');
+                        answerDiv.innerHTML = `<p>${answer.body}</p>
+                                                               <p><strong>Người trả lời:</strong> ${answer.user.username}</p>
+                                                               <div class="timestamp">Ngày tạo: ${new Date(answer.createdAt).toLocaleString()}</div>
+                                                               <div class="menu">...</div>
+                                                               <div class="menu-content">
+                                                                   <button class="delete-button" data-id="${answer.answerId}" style="display: none;">Xóa</button>
+                                                               </div>`;
+                        answersList.appendChild(answerDiv);
+
+                        // Check if the current user is the owner of the answer
+                        const deleteButton = answerDiv.querySelector('.delete-button');
+                        if (isLoggedIn && username === answer.user.username) {
+                            deleteButton.style.display = 'inline'; // Show delete button if user is the owner
+                        }
+
+                        // Menu toggle
+                        const menu = answerDiv.querySelector('.menu');
+                        const menuContent = answerDiv.querySelector('.menu-content');
+                        menu.addEventListener('click', function () {
+                            menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+                        });
+
+                        // Delete button functionality
+                        deleteButton.addEventListener('click', function () {
+                            if (confirm('Bạn có chắc chắn muốn xóa câu trả lời này?')) {
+                                fetch(`http://localhost:5100/api/Answer/${answer.answerId}`, {
+                                    method: 'DELETE'
+                                })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            answerDiv.remove();
+                                            menuContent.style.display = 'none';
+                                            alert('Xóa thành công');
+                                        } else {
+                                            throw new Error('Lỗi khi xóa câu trả lời');
+                                        }
+                                    })
+                                    .catch(error => console.error('Lỗi khi xóa câu trả lời:', error));
+                            }
+                        });
+                    });
+                })
+                .catch(error => console.error('Lỗi khi lấy câu trả lời:', error));
+
+            document.getElementById('post-answer').addEventListener('click', function () {
+                const answerBody = document.getElementById('answer-body').value;
+
+                if (!username) {
+                    alert('Người dùng chưa đăng nhập.');
+                    return;
+                }
+                if (!answerBody) {
+                    alert('Câu trả lời không được để trống');
+                    return;
+                }
+                fetch(`http://localhost:5100/api/Answer/question/${questionId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        body: answerBody
+                    })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error('Lỗi khi đăng câu trả lời');
+                        }
+                    })
+                    .then(data => {
+                        const answerDiv = document.createElement('div');
+                        answerDiv.classList.add('answer');
+                        answerDiv.innerHTML = `
+                        <p>${data.body}</p>
+                        <p><strong>Người trả lời:</strong> ${username}</p>
+                        <div class="timestamp">Ngày tạo: ${new Date(data.createdAt).toLocaleString()}</div>
+                        <div class="menu">...</div>
+                        <div class="menu-content">
+                            <button class="edit-button" data-id="${data.answerId}">Sửa</button>
+                            <button class="delete-button" data-id="${data.answerId}">Xóa</button>
+                        </div>`;
+                        answersList.appendChild(answerDiv);
+                        document.getElementById('answer-body').value = '';
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+
+            });
+        });
+    </script>
+</body>
+</html>

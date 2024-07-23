@@ -1,0 +1,255 @@
+﻿@page "/HomePage"
+@model QnaForum_App.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diễn đàn hỏi và trả lời</title>
+    <style>
+        /* CSS styles for the forum */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #343a40;
+            padding: 10px;
+            text-align: right;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin-right: 20px;
+            }
+
+        main {
+            padding: 20px;
+        }
+
+        .question, .answer {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+            .question h3 {
+                margin-top: 0;
+                display: inline-block;
+                font-size: 18px;
+            }
+
+            .question .timestamp {
+                font-size: 12px;
+                color: #888;
+            }
+
+        .username {
+            margin-right: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .question a.view-question {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .question a.view-question:hover {
+                text-decoration: underline;
+            }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .search-button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diễn đàn hỏi và trả lời</h1>
+    </header>
+    <nav>
+        <span class="username" id="username" style="display: none; cursor: pointer;"></span>
+        <a href="/CreateQuestion">Đặt câu hỏi</a>
+        <a href="/Login" id="login-link">Đăng nhập</a>
+        <a href="/Register" id="register-link">Đăng ký</a>
+        <a href="#" id="logout-link" style="display: none;">Đăng xuất</a>
+    </nav>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Tìm kiếm câu hỏi">
+            <button id="search-button" class="search-button">Tìm kiếm</button>
+        </div>
+        <div id="question-list">
+            <!-- More questions will be dynamically loaded here -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!sessionStorage.getItem('pageLoaded')) {
+                localStorage.setItem('isLoggedIn', 'false');
+                localStorage.removeItem('username');
+                sessionStorage.setItem('pageLoaded', 'true');
+                localStorage.removeItem('userId');
+            }
+
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const username = localStorage.getItem('username');
+            const userId = localStorage.getItem('userId');
+            console.log(userId);
+            const loginLink = document.getElementById('login-link');
+            const registerLink = document.getElementById('register-link');
+            const logoutLink = document.getElementById('logout-link');
+            const usernameSpan = document.getElementById('username');
+
+            if (isLoggedIn) {
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+                logoutLink.style.display = 'inline';
+                usernameSpan.style.display = 'inline';
+                usernameSpan.innerText = username;
+            } else {
+                loginLink.style.display = 'inline';
+                registerLink.style.display = 'inline';
+                logoutLink.style.display = 'none';
+                usernameSpan.style.display = 'none';
+            }
+
+            logoutLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                localStorage.setItem('isLoggedIn', 'false');
+                localStorage.removeItem('username');
+                localStorage.removeItem('userId'); // Ensure userId is also removed
+                window.location.href = '/HomePage';
+            });
+            usernameSpan.addEventListener('click', function () {
+                if (userId) {
+                    window.location.href = `/UserInfo?id=${encodeURIComponent(userId)}`;
+                } else {
+                    alert('Bạn cần đăng nhập để xem thông tin người dùng');
+                    window.location.href = '/Login';
+                }
+            });
+            let questions = [];
+            
+            async function fetchQuestionAnswerCounts() {
+                try {
+                    const response = await fetch('http://localhost:5100/api/Answer/questionAnswerCounts');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error fetching question answer counts:', error);
+                    return [];
+                }
+            }
+            async function displayQuestions(data) {
+                const questionList = document.getElementById('question-list');
+                questionList.innerHTML = ''; 
+
+                // Sort questions by creation date
+                data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+                const answerCounts = await fetchQuestionAnswerCounts();
+                data.forEach(item => {
+                    const answerCount = answerCounts.find(q => q.questionId === item.questionId)?.answerCount || 0;
+                    const questionDiv = document.createElement('div');
+                    questionDiv.classList.add('question');
+                    questionDiv.innerHTML = `
+                            <div class="header">
+                                <h3>${item.title}</h3>
+                                <p class="timestamp">Ngày tạo: ${new Date(item.createdAt).toLocaleString()} Người tạo: ${item.username}</p>
+                            </div>
+                            <p>${item.body}</p>
+                            <p>Số câu trả lời: ${answerCount}</p>
+                            <a href="#" class="view-question" data-id="${item.questionId}">Xem Chi Tiết</a>`;
+                    questionList.appendChild(questionDiv);
+                });
+
+                document.querySelectorAll('.view-question').forEach(link => {
+                    link.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        const questionId = this.getAttribute('data-id');
+                        console.log('Clicked question ID:', questionId);
+
+                        if (isLoggedIn) {
+                            window.location.href = `/QuestionDetail?id=${questionId}`;
+                        } else {
+                            alert('Bạn cần đăng nhập để tiếp tục');
+                            window.location.href = '/Login';
+                        }
+                    });
+                });
+            }
+
+            fetch('http://localhost:5100/api/Question')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    questions = data; // Store all questions
+                    displayQuestions(data);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+
+            // Search functionality
+            const searchButton = document.getElementById('search-button');
+            const searchInput = document.getElementById('search-input');
+
+            searchButton.addEventListener('click', function () {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                if (searchTerm === '') {
+                    displayQuestions(questions); // Display all questions if search term is empty
+                } else {
+                    const filteredQuestions = questions.filter(q => q.title.toLowerCase().includes(searchTerm));
+                    displayQuestions(filteredQuestions); // Display filtered questions
+                }
+            });
+        });
+    </script>
+</body>
+</html>

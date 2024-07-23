@@ -1,0 +1,181 @@
+﻿@page
+@model QnaForum_App.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start; /* Căn phần container về bên trái */
+            align-items: center;
+            height: 100vh;
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px; /* Thêm padding để tạo khoảng cách với biên của trình duyệt */
+            box-sizing: border-box;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            box-sizing: border-box;
+            margin-right: 20px;
+        }
+
+        .image-container {
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .image-container img {
+            width: 300%; 
+            height: auto;
+            border-radius: 0px;
+            object-fit: cover;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #register-message {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Đăng ký</h2>
+
+            <div id="register-message"></div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="username">Tài khoản:</label>
+                    <input type="text" id="username" name="username" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <div class="form-group">
+                    <label for="cfpassword">Nhập lại mật khẩu:</label>
+                    <input type="password" id="cfpassword" name="cfpassword" required />
+                </div>
+                <button type="submit">Đăng ký</button>
+            </form>
+        </div>
+
+        <div class="image-container">
+            <img src=~/image/download.jfif />
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const cfpassword = document.getElementById('cfpassword').value;
+            if (cfpassword != password) {
+                alert('Mật khẩu nhập lại không đúng');
+                return;
+            }
+            fetch('http://localhost:5100/api/User', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, email, password, createdAt: new Date().toISOString() })
+            })
+                .then(response => {
+                    const messageDiv = document.getElementById('register-message');
+                    if (response.ok) {
+                        messageDiv.innerText = 'Registration successful! Redirecting to login...';
+                        messageDiv.style.color = 'green';
+                        // Redirect to login page with username and password
+                        setTimeout(() => {
+                            window.location.href = `/Login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+                        }, 2000);
+                    } else if (response.status === 409) {
+                        messageDiv.innerText = 'Username or email already exists.';
+                        messageDiv.style.color = 'red';
+                    } else {
+                        messageDiv.innerText = 'Registration failed. Please try again.';
+                        messageDiv.style.color = 'red';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during registration:', error);
+                    const messageDiv = document.getElementById('register-message');
+                    messageDiv.innerText = 'An error occurred. Please try again.';
+                    messageDiv.style.color = 'red';
+                });
+        });
+    </script>
+</body>
+</html>

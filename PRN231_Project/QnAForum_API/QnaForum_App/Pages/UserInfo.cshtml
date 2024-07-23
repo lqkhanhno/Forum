@@ -1,0 +1,91 @@
+﻿@page
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            margin-bottom: 20px;
+        }
+
+            .user-info h2 {
+                font-size: 20px;
+                color: #007bff;
+            }
+
+            .user-info p {
+                font-size: 16px;
+                color: #555;
+            }
+
+        .back-link {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+        }
+
+            .back-link:hover {
+                text-decoration: underline;
+            }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>User Information</h1>
+        <div id="user-info" class="user-info">
+            <!-- Thông tin người dùng sẽ được chèn vào đây -->
+        </div>
+
+        <a href="/HomePage" class="back-link">Back to Home</a>
+    </div>
+
+    <script>
+        // Lấy ID người dùng từ query string
+        const params = new URLSearchParams(window.location.search);
+        const userId = params.get('id');
+
+        if (userId) {
+            // Gọi API để lấy thông tin người dùng
+            axios.get(`http://localhost:5100/api/User/${userId}`)
+                .then(response => {
+                    const user = response.data;
+                    // Hiển thị thông tin người dùng
+                    const userInfoDiv = document.getElementById('user-info');
+                    userInfoDiv.innerHTML = `
+                                <h2>${user.username}</h2>
+                                <p>Email: ${user.email}</p>
+                                <p>Created At: ${new Date(user.createdAt).toLocaleDateString()}</p>
+                            `;
+                })
+                .catch(error => {
+                    console.error('Có lỗi xảy ra khi gọi API:', error);
+                    const userInfoDiv = document.getElementById('user-info');
+                    userInfoDiv.innerHTML = '<p>Không tìm thấy thông tin người dùng.</p>';
+                });
+        } else {
+            document.getElementById('user-info').innerHTML = '<p>Không có ID người dùng trong URL.</p>';
+        }
+    </script>
+</body>
+</html>

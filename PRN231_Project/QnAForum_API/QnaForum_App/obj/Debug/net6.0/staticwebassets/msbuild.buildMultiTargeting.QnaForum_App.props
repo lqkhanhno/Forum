@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\QnaForum_App.props" />
+</Project>
